@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { collection, query, getDocs, orderBy, where } from "firebase/firestore";
+import { collection, query, getDocs, orderBy } from "firebase/firestore";
 import { db } from "../../services/firebase";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,6 @@ interface CarImagesProps {
 function Home() {
 
   const [cars, setCars] = useState<CarsProps[]>([])
-  const [carsFiltered, setCarsFiltered] = useState<CarsProps[] | undefined>([])
   const [loadImages, setLoadImages] = useState<string[]>([])
   const [input, setInput] = useState<string | undefined>()
 
